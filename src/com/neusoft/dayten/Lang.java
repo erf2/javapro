@@ -9,4 +9,11 @@ public abstract class Lang {
     public Lang(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Lang{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

@@ -42,9 +42,45 @@ public class PeiZhi {
         Scanner scanner = new Scanner(System.in);
         System.out.println("输入玩家人数");
         int n = scanner.nextInt();
+        System.out.println("进入游戏");
         if (n>=12&&n<=18){
-            System.out.println("进入游戏");
-            moShi();
+            switch (n){
+                case 12 :{
+                    zuHe7(langRenShas);
+                    System.out.println(langRenShas);
+                    return;
+                }
+                case 13 :{
+                    zuHe6(langRenShas);
+                    System.out.println(langRenShas);
+                    return;
+                }
+                case 14 :{
+                    zuHe5(langRenShas);
+                    System.out.println(langRenShas);
+                    return;
+                }
+                case 15 :{
+                    zuHe4(langRenShas);
+                    System.out.println(langRenShas);
+                    return;
+                }
+                case 16 :{
+                    zuHe3(langRenShas);
+                    System.out.println(langRenShas);
+                    return;
+                }
+                case 17 :{
+                    zuHe2(langRenShas);
+                    System.out.println(langRenShas);
+                    return;
+                }
+                case 18 :{
+                    zuHe1(langRenShas);
+                    System.out.println(langRenShas);
+                    return;
+                }
+            }
         }else{
             System.out.println("大于18人或者小于12人，超出游戏人数范围");
             Scanner scanner1 = new Scanner(System.in);

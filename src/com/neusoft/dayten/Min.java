@@ -9,4 +9,11 @@ public abstract class Min {
     public Min(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Min{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

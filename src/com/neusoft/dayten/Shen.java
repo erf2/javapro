@@ -9,4 +9,11 @@ public abstract class Shen {
     public Shen(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Shen{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
