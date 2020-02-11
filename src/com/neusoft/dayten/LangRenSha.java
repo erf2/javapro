@@ -2,6 +2,7 @@ package com.neusoft.dayten;
 
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -9,5 +10,8 @@ import java.util.Set;
  */
 public class LangRenSha {
     public static void main(String[] args) {
+        PeiZhi peiZhi = new PeiZhi();
+        peiZhi.menu();
+
     }
 }
