@@ -22,6 +22,7 @@ public class PeiZhi {
     public static Set<TiZuiYang> tiZuiYangs = new HashSet<>();
     public static Set<NvWu> nvWus = new HashSet<>();
 
+
     public static void menu(){
         Scanner scanner0 = new Scanner(System.in);
         System.out.println("欢迎进入狼人杀游戏平台");
@@ -40,7 +41,15 @@ public class PeiZhi {
     }
     public static void xianZhi(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("输入玩家人数");
+        System.out.println("12-18人（大于18人或者小于12人，超出游戏人数范围）");
+        System.out.println("18（5,7,5）人    5狼人     7村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 替罪羊 1吹笛者 1盗贼      21张牌");
+        System.out.println("17（5,6,6）人    5狼人     7村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 替罪羊 1盗贼                    20张牌");
+        System.out.println("16（5,6,5）人    5狼人     6村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 替罪羊 1盗贼                    19张牌");
+        System.out.println("15（5,5,5）人    5狼人     5村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 替罪羊 1盗贼                    18张牌");
+        System.out.println("14（4,5,5）人    4狼人     5村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 替罪羊1 盗贼                    17张牌");
+        System.out.println("13（4,5,4）人    4狼人     5村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 盗贼\t                    16张牌");
+        System.out.println("12（4,4,4）人    4狼人     4村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 盗贼\t                    15张牌");
+        System.out.println("请输入玩家人数");
         int n = scanner.nextInt();
         System.out.println("进入游戏");
         if (n>=12&&n<=18){
