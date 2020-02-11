@@ -12,6 +12,7 @@ public class LangRenSha {
     public static void main(String[] args) {
         PeiZhi peiZhi = new PeiZhi();
         peiZhi.menu();
-
+        System.out.println("游戏结束");
+        peiZhi.moShi();
     }
 }

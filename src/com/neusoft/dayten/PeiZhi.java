@@ -29,13 +29,17 @@ public class PeiZhi {
         System.out.println("1：开始游戏");
         System.out.println("2：结束游戏");
         int f = scanner0.nextInt();
-        switch (f){
-            case 1 :{
-                xianZhi();
-                return;
-            }
-            default :{
-                System.exit(1);
+        if (f!=1&&f!=2){
+            menu();
+        }else{
+            switch (f){
+                case 1 :{
+                    xianZhi();
+                    return;
+                }
+                default :{
+                    System.exit(1);
+                }
             }
         }
     }
@@ -49,11 +53,16 @@ public class PeiZhi {
         System.out.println("14（4,5,5）人    4狼人     5村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 替罪羊1 盗贼                    17张牌");
         System.out.println("13（4,5,4）人    4狼人     5村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 盗贼\t                    16张牌");
         System.out.println("12（4,4,4）人    4狼人     4村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 盗贼\t                    15张牌");
-        System.out.println("请输入玩家人数");
+        System.out.println("11 返回");
+        System.out.println("请输入玩家人数或者返回");
         int n = scanner.nextInt();
         System.out.println("进入游戏");
-        if (n>=12&&n<=18){
+        if (n>=11&&n<=18){
             switch (n){
+                case 11 :{
+                    menu();
+                    return;
+                }
                 case 12 :{
                     zuHe7(langRenShas);
                     System.out.println(langRenShas);
@@ -118,35 +127,45 @@ public class PeiZhi {
         System.out.println("5：14（4,5,5）人    4狼人     5村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 替罪羊1 盗贼                    17张牌");
         System.out.println("6：13（4,5,4）人    4狼人     5村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 盗贼\t                    16张牌");
         System.out.println("7：12（4,4,4）人    4狼人     4村民        1预言家 1女巫   1丘比特 1守护 1猎人 1村长 1 盗贼\t                    15张牌");
+        System.out.println("8：结束游戏");
         int b = scanner2.nextInt();
         switch (b){
             case 1 :{
                 zuHe1(langRenShas);
+                moShi();
                 return;
             }
             case 2 :{
                 zuHe2(langRenShas);
+                moShi();
                 return;
             }
             case 3 :{
                 zuHe3(langRenShas);
+                moShi();
                 return;
             }
             case 4 :{
                 zuHe4(langRenShas);
+                moShi();
                 return;
             }
             case 5 :{
                 zuHe5(langRenShas);
+                moShi();
                 return;
             }
             case 6 :{
                 zuHe6(langRenShas);
+                moShi();
                 return;
             }
             case 7 :{
                 zuHe7(langRenShas);
+                moShi();
                 return;
+            }case 8 :{
+                jieShu();
             }default:{
                 System.out.println("请在七种模式下任意选择");
                 jieShu();
