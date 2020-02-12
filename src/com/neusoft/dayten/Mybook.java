@@ -1,11 +1,13 @@
 package com.neusoft.dayten;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * Created by lan_jia_nao on 2020/2/10.
  */
-public class Mybook {
+public class Mybook implements Serializable {
+    public static final long serialVersionUID = 1L;
     private String name;
     private Double price;
     private String press;
