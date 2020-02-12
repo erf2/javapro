@@ -64,38 +64,38 @@ public class PeiZhi {
                     return;
                 }
                 case 12 :{
-                    zuHe7(langRenShas);
-                    System.out.println(langRenShas);
+                    zuHe7();
+                    System.out.println();
                     return;
                 }
                 case 13 :{
-                    zuHe6(langRenShas);
-                    System.out.println(langRenShas);
+                    zuHe6();
+                    System.out.println();
                     return;
                 }
                 case 14 :{
-                    zuHe5(langRenShas);
-                    System.out.println(langRenShas);
+                    zuHe5();
+                    System.out.println();
                     return;
                 }
                 case 15 :{
-                    zuHe4(langRenShas);
-                    System.out.println(langRenShas);
+                    zuHe4();
+                    System.out.println();
                     return;
                 }
                 case 16 :{
-                    zuHe3(langRenShas);
-                    System.out.println(langRenShas);
+                    zuHe3();
+                    System.out.println();
                     return;
                 }
                 case 17 :{
-                    zuHe2(langRenShas);
-                    System.out.println(langRenShas);
+                    zuHe2();
+                    System.out.println();
                     return;
                 }
                 case 18 :{
-                    zuHe1(langRenShas);
-                    System.out.println(langRenShas);
+                    zuHe1();
+                    System.out.println();
                     return;
                 }
             }
@@ -131,37 +131,37 @@ public class PeiZhi {
         int b = scanner2.nextInt();
         switch (b){
             case 1 :{
-                zuHe1(langRenShas);
+                zuHe1();
                 moShi();
                 return;
             }
             case 2 :{
-                zuHe2(langRenShas);
+                zuHe2();
                 moShi();
                 return;
             }
             case 3 :{
-                zuHe3(langRenShas);
+                zuHe3();
                 moShi();
                 return;
             }
             case 4 :{
-                zuHe4(langRenShas);
+                zuHe4();
                 moShi();
                 return;
             }
             case 5 :{
-                zuHe5(langRenShas);
+                zuHe5();
                 moShi();
                 return;
             }
             case 6 :{
-                zuHe6(langRenShas);
+                zuHe6();
                 moShi();
                 return;
             }
             case 7 :{
-                zuHe7(langRenShas);
+                zuHe7();
                 moShi();
                 return;
             }case 8 :{
@@ -173,7 +173,7 @@ public class PeiZhi {
             }
         }
     }
-    public static void zuHe1(Set<LangRenSha> langRenShas){
+    public static void zuHe1(){
         for (int i=1;i<=5;i++){
             LangRen langRen = new LangRen("狼人"+i);
             langRens.add(langRen);
@@ -201,7 +201,7 @@ public class PeiZhi {
         DaoZei daoZei = new DaoZei("盗贼");
         daoZeis.add(daoZei);
     }
-    public static void zuHe2(Set<LangRenSha> langRenShas){
+    public static void zuHe2(){
         for (int i=1;i<=5;i++){
             LangRen langRen = new LangRen("狼人"+i);
             langRens.add(langRen);
@@ -227,7 +227,7 @@ public class PeiZhi {
         DaoZei daoZei = new DaoZei("盗贼");
         daoZeis.add(daoZei);
     }
-    public static void zuHe3(Set<LangRenSha> langRenShas){
+    public static void zuHe3(){
         for (int i=1;i<=5;i++){
             LangRen langRen = new LangRen("狼人"+i);
             langRens.add(langRen);
@@ -253,7 +253,7 @@ public class PeiZhi {
         DaoZei daoZei = new DaoZei("盗贼");
         daoZeis.add(daoZei);
     }
-    public static void zuHe4(Set<LangRenSha> langRenShas){
+    public static void zuHe4(){
         for (int i=1;i<=5;i++){
             LangRen langRen = new LangRen("狼人"+i);
             langRens.add(langRen);
@@ -279,7 +279,7 @@ public class PeiZhi {
         DaoZei daoZei = new DaoZei("盗贼");
         daoZeis.add(daoZei);
     }
-    public static void zuHe5(Set<LangRenSha> langRenShas){
+    public static void zuHe5(){
         for (int i=1;i<=4;i++){
             LangRen langRen = new LangRen("狼人"+i);
             langRens.add(langRen);
@@ -305,7 +305,7 @@ public class PeiZhi {
         DaoZei daoZei = new DaoZei("盗贼");
         daoZeis.add(daoZei);
     }
-    public static void zuHe6(Set<LangRenSha> langRenShas){
+    public static void zuHe6(){
         for (int i=1;i<=4;i++){
             LangRen langRen = new LangRen("狼人"+i);
             langRens.add(langRen);
@@ -329,7 +329,7 @@ public class PeiZhi {
         DaoZei daoZei = new DaoZei("盗贼");
         daoZeis.add(daoZei);
     }
-    public static void zuHe7(Set<LangRenSha> langRenShas){
+    public static void zuHe7(){
         for (int i=1;i<=4;i++){
             LangRen langRen = new LangRen("狼人"+i);
             langRens.add(langRen);
