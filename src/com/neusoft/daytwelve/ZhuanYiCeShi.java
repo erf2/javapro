@@ -6,6 +6,6 @@ package com.neusoft.daytwelve;
 public class ZhuanYiCeShi {
     public static void main(String[] args) {
         ZhuanYiWenJian zhuanYiWenJian = new ZhuanYiWenJian();
-        /*zhuanYiWenJian.zhanTieWenJian();*/
+        zhuanYiWenJian.zhanTieWenJian();
     }
 }

@@ -13,7 +13,7 @@ public class ZhuanYiWenJian {
         System.out.println("请输入要查找的文件地址+文件名");
         String a = scanner.next();
         File file = new File(a);
-        System.out.println("是否存在"+file.isDirectory());
+        System.out.println("是否存在"+file.exists());
     }
     public static void jianTieWenJian() {
         InputStream inputStream = null;
@@ -22,9 +22,11 @@ public class ZhuanYiWenJian {
             System.out.println("请输入要查找的文件地址+文件名");
             String a = scanner.next();
             file = new File(a);
-            System.out.println("是否存在"+file.isDirectory());
-            if (!file.exists())
+            if (!file.exists()){
+                System.out.println("文件不存在");
                 jianTieWenJian();
+                return;
+            }
             inputStream = new FileInputStream(a);
             byte[] bytes = new byte[1024];
             int b = inputStream.read(bytes);
@@ -45,44 +47,43 @@ public class ZhuanYiWenJian {
             }
         }
     }
-    /*public static void zhanTieWenJian() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("请输入要粘贴的到的地址");
-        String o = scanner.next();
-        file = new File(o);
-        OutputStream outputStream = null;
+    public static void zhanTieWenJian() {
         InputStream inputStream = null;
+        OutputStream outputStream = null;
         try {
-            Scanner scanner1 = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
             System.out.println("请输入要查找的文件地址+文件名");
-            String a = scanner1.next();
+            System.out.println("默认存放在d:盘");
+            String a = scanner.next();
             file = new File(a);
-            System.out.println("是否存在"+file.canRead());
-            if (!file.isDirectory()==true)
+            if (!file.exists()){
+                System.out.println("文件不存在");
                 jianTieWenJian();
+                return;
+            }
             inputStream = new FileInputStream(a);
+            outputStream = new FileOutputStream("d:/a");
             byte[] bytes = new byte[1024];
             int b = inputStream.read(bytes);
             while (b!= -1){
-                inputStream.read(bytes);
+                inputStream.read(bytes,0,b);
+                outputStream.write(bytes);
+                outputStream.flush();
                 b = inputStream.read(bytes);
             }
-            outputStream = new FileOutputStream(file, true);
-            outputStream.write(bytes);
-            outputStream.flush();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
             try {
+                if (outputStream!= null)
+                    outputStream.close();
                 if (inputStream != null)
                     inputStream.close();
-                if (outputStream != null)
-                    outputStream.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-    }*/
+    }
 }
