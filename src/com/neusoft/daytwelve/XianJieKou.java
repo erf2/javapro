@@ -3,7 +3,7 @@ package com.neusoft.daytwelve;
 /**
  * Created by lan_jia_nao on 2020/2/13.
  */
-public class XianCheng extends Thread {
+public class XianJieKou implements Runnable {
     @Override
     public void run() {
         for (int i=1;i<=100;i++){
@@ -15,12 +15,15 @@ public class XianCheng extends Thread {
             System.out.println(Thread.currentThread().getName()+"线程输出---"+i);
         }
     }
+    /*public static int method(int a,int b){
+    }*/
 }
-class XianChengTest {
+class XianJieKouTest {
     public static void main(String[] args) {
-        XianCheng xc1 = new XianCheng();
-        xc1.start();
-        XianCheng xc2 = new XianCheng();
-        xc2.start();
+        XianJieKou xjk1 = new XianJieKou();
+        Thread t = new Thread(xjk1);
+        t.start();
+        Thread t2 = new Thread(xjk1);
+        t2.start();
     }
 }
