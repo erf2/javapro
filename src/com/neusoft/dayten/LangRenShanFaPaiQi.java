@@ -62,7 +62,6 @@ public class LangRenShanFaPaiQi {
 
     public static void jd(List<String> all, List<String> di) {
         while (di.size() < 3) {
-
             Random random = new Random();
             int index = random.nextInt(all.size());
             if (di.contains("狼人") && all.get(index).equals("狼人"))
