@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05be6e6e-2a7d-4656-a82e-7416595ebdad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../javapro/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../javapro/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="05be6e6e-2a7d-4656-a82e-7416595ebdad" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/../javapro/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -270,7 +268,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="D:/mysql-connector-java-5.1.6.jar!/" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/javapro/src/com/neusoft/daytwelve/ZhuanYiCeShi.java" />
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -837,7 +835,7 @@
       <workItem from="1582070504885" duration="8463000" />
       <workItem from="1582089687638" duration="30700000" />
       <workItem from="1582122832630" duration="89000" />
-      <workItem from="1582122931815" duration="16000" />
+      <workItem from="1582122931815" duration="81000" />
     </task>
     <task id="LOCAL-00001" summary="你好，请翻阅！">
       <created>1580976847002</created>
@@ -1035,11 +1033,18 @@
       <option name="project" value="LOCAL" />
       <updated>1582122860305</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="你好，请翻阅！">
+      <created>1582122957107</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1582122957107</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229572000" />
+    <option name="totallyTimeSpent" value="229637000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
