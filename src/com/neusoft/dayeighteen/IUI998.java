@@ -10,7 +10,7 @@ import java.sql.SQLException;
  */
 public class IUI998 {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://192.168.13.131:3306/erf";
+        String url = "jdbc:mysql://192.168.13.131:3306/erf?useUnicode=true&characterEncoding=utf8";
         String username = "root";
         String password = "123456";
         Connection con = null;
@@ -18,7 +18,7 @@ public class IUI998 {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url,username,password);
-            pstmt = con.prepareStatement("create database ooo");
+            pstmt = con.prepareStatement("insert into animal(id,name,holder)values(4,'天子','二飞')");
             int i = pstmt.executeUpdate();
             System.out.println(i);
         } catch (ClassNotFoundException e) {
