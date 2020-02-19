@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="05be6e6e-2a7d-4656-a82e-7416595ebdad" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../javapro/src/com/zsgc/util/ZSGCUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../javapro/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../javapro/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../javapro/src/com/zsgc/dao/StudentDao.java" afterPath="$PROJECT_DIR$/../javapro/src/com/zsgc/dao/StudentDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../javapro/src/com/zsgc/test/ZSGCTest.java" afterPath="$PROJECT_DIR$/../javapro/src/com/zsgc/test/ZSGCTest.java" />
     </list>
@@ -837,7 +836,7 @@
       <workItem from="1582029503488" duration="122000" />
       <workItem from="1582031400771" duration="2362000" />
       <workItem from="1582070504885" duration="8463000" />
-      <workItem from="1582089687638" duration="30647000" />
+      <workItem from="1582089687638" duration="30666000" />
     </task>
     <task id="LOCAL-00001" summary="你好，请翻阅！">
       <created>1580976847002</created>
@@ -1014,11 +1013,18 @@
       <option name="project" value="LOCAL" />
       <updated>1582108716195</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="你好，请翻阅！">
+      <created>1582122757765</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1582122757765</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229414000" />
+    <option name="totallyTimeSpent" value="229433000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1047,7 +1053,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14484979" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14484979" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24907975" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />

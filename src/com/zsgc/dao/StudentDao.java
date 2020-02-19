@@ -1,7 +1,9 @@
 package com.zsgc.dao;
 
 import com.zsgc.pojo.Student;
+import com.zsgc.util.ZSGCUtil;
 
+import javax.rmi.CORBA.Util;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.List;
  * Created by lan_jia_nao on 2020/2/18.
  */
 public class StudentDao implements IstudentDao{
-    String url = "jdbc:mysql://192.168.13.131:3306/dbl?useUnicode=ture&characterEnconding=utf8";
+    String url = "jdbc:mysql://192.168.13.131:3306/erf?useUnicode=true&characterEncoding=utf8";
     String username = "root";
     String password = "123456";
 
@@ -32,6 +34,7 @@ public class StudentDao implements IstudentDao{
                 student.setName(rs.getString("name"));
                 student.setAge(rs.getInt("age"));
                 student.setGender(rs.getInt("gender"));
+                list.add(student);
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -54,91 +57,17 @@ public class StudentDao implements IstudentDao{
 
     @Override
     public int add(Student student) {
-        int i = 0;
-        Connection con = null;
-        PreparedStatement pstmt = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(url,username,password);
-            pstmt = con.prepareStatement("insert into student(name,age,gender) values(?,?,?)");
-            pstmt.setString(1,student.getName());
-            pstmt.setInt(2,student.getAge());
-            pstmt.setInt(3,student.getGender());
-            i = pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }finally{
-            try {
-                if(pstmt!=null)
-                    pstmt.close();
-                if (con!=null)
-                    con.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return i;
+        return ZSGCUtil.executeUpdate("insert into student(name,age,gender) values(?,?,?)",student.getName(),student.getAge(),student.getGender());
     }
 
     @Override
     public int update(Student student) {
-        int i = 0;
-        Connection con = null;
-        PreparedStatement pstmt = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(url,username,password);
-            pstmt = con.prepareStatement("update student set name=?,age=?,gender=? where id=:");
-            pstmt.setString(1,student.getName());
-            pstmt.setInt(2,student.getAge());
-            pstmt.setInt(3,student.getGender());
-            pstmt.setInt(4,student.getId());
-            i = pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }finally{
-            try {
-                if (pstmt!=null)
-                    pstmt.close();
-                if (con!=null)
-                    con.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return i;
+        return ZSGCUtil.executeUpdate("update student set name=?,age=?,gender=? where id=?",student.getName(),student.getAge(),student.getGender(),student.getId());
     }
 
     @Override
     public int del(int id) {
-        int i = 0;
-        Connection con = null;
-        PreparedStatement pstmt = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(url,username,password);
-            pstmt = con.prepareStatement("delete from student where id=?");
-            pstmt.setInt(1,id);
-            i = pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }finally{
-            try {
-                if (pstmt!=null)
-                    pstmt.close();
-                if (con!=null)
-                    con.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return i;
+        return ZSGCUtil.executeUpdate("delete from student where id=?",id);
     }
 
     @Override
