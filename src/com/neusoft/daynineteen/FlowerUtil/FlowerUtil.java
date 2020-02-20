@@ -1,15 +1,14 @@
-package com.zsgc.util;
+package com.neusoft.daynineteen.FlowerUtil;
 
-import java.io.File;
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by lan_jia_nao on 2020/2/19.
+ * Created by lan_jia_nao on 2020/2/20.
  */
-public class ZSGCUtil {
+public class FlowerUtil {
     private static final String URL = "jdbc:mysql://192.168.13.131:3306/erf?useUnicode=true&characterEncoding=utf8";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "123456";
@@ -32,10 +31,10 @@ public class ZSGCUtil {
         return con;
     }
 
-    public static int executeUpdate(String sql, Object... params) {
+    public static int executeUpdate(String sql,Object... params) {
+        int result = 0;
         Connection con = getconnection();
         PreparedStatement pstmt = null;
-        int result = 0;
         try {
             pstmt = con.prepareStatement(sql);
             if (params != null) {
@@ -52,22 +51,22 @@ public class ZSGCUtil {
         return result;
     }
 
-    public static <T> List<T> execoteQuery(String sql, Class<T> clz) {
+    public static <T> List<T> executeQuery(String sql,Class<T> tClass){
         List<T> list = new ArrayList<>();
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try {
-            con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            con = DriverManager.getConnection(URL,USERNAME,PASSWORD);
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
-            while (rs.next()) {
-                T t = clz.newInstance();
-                Field[] fields = clz.getDeclaredFields();
-                for (Field f : fields) {
+            while (rs.next()){
+                T t = tClass.newInstance();
+                Field[] fields = tClass.getDeclaredFields();
+                for (Field f : fields){
                     Object value = rs.getObject(f.getName());
                     f.setAccessible(true);
-                    f.set(t, value);
+                    f.set(t,value);
                 }
                 list.add(t);
             }
@@ -77,8 +76,8 @@ public class ZSGCUtil {
             e.printStackTrace();
         } catch (InstantiationException e) {
             e.printStackTrace();
-        } finally {
-            close(con, pstmt, rs);
+        }finally {
+            close(con,pstmt,rs);
         }
         return list;
     }
@@ -93,12 +92,14 @@ public class ZSGCUtil {
             e.printStackTrace();
         }
     }
-
-    static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
+    static void close(Connection con, PreparedStatement pstmt,ResultSet rs) {
         try {
-            if (rs != null)
+            if (rs!=null)
                 rs.close();
-            close(con, pstmt);
+            if (pstmt != null)
+                pstmt.close();
+            if (con != null)
+                con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

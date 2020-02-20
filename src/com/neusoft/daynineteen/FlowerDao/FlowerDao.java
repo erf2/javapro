@@ -1,5 +1,6 @@
 package com.neusoft.daynineteen.FlowerDao;
 
+import com.neusoft.daynineteen.FlowerUtil.FlowerUtil;
 import com.neusoft.daynineteen.pojo.Flower;
 
 import java.sql.*;
@@ -55,7 +56,8 @@ public class FlowerDao implements IflowerDao {
 
     @Override
     public int buy(Flower flower) {
-        int i = 0;
+        return FlowerUtil.executeUpdate("insert into flower(name,color,weather,no)values(?,?,?,?)",flower.getName(),flower.getColor(),flower.getWeather(),flower.getNo());
+        /*int i = 0;
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
@@ -82,12 +84,13 @@ public class FlowerDao implements IflowerDao {
                 e.printStackTrace();
             }
         }
-        return i;
+        return i;*/
     }
 
     @Override
     public int sell(int id) {
-        int i = 0;
+        return FlowerUtil.executeUpdate("delete from flower where id=?",id);
+        /*int i = 0;
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
@@ -111,12 +114,13 @@ public class FlowerDao implements IflowerDao {
                 e.printStackTrace();
             }
         }
-        return i;
+        return i;*/
     }
 
     @Override
     public int exchange(Flower flower) {
-        int i = 0;
+        return FlowerUtil.executeUpdate("update flower set name=?,color=?,weather=?,no=? where id=?",flower.getName(),flower.getColor(),flower.getWeather(),flower.getNo(),flower.getId());
+        /*int i = 0;
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
@@ -144,7 +148,7 @@ public class FlowerDao implements IflowerDao {
                 e.printStackTrace();
             }
         }
-        return i;
+        return i;*/
     }
 
     @Override
