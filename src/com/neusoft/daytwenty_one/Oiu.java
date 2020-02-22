@@ -1,5 +1,6 @@
 package com.neusoft.daytwenty_one;
 
+
 /**
  * Created by lan_jia_nao on 2020/2/21.
  */
@@ -31,7 +32,7 @@ public class Oiu {
         for (i=1;i<=100;i++)
             sum+=i;
         System.out.println(sum);*/
-        int sum = 5050;
+        /*int sum = 5050;
         int p = 1;
         for (int i=1;i<=100;i++){
             for (int j=2;j<=(i/2);j++){
@@ -41,6 +42,32 @@ public class Oiu {
                 }
             }
         }
-        System.out.println(sum);
+        System.out.println(sum);*/
+        /*int sum = 0;
+        //1到100的质数，从2开始判断
+        for (int x=2;x<=100;x++){
+            //判断范围 从2开始
+            int y = 2;
+            //假设是质数
+            String str = "是质数";
+            //判断范围 2开始，到判断值的一半为止或者到判断值
+            while (y<(x/2)||y<x){
+                //2是质数 从不是2开始判断
+                if (x!=2){
+                    //判断值除以假设的因数，余零，则不是质数，结束循环
+                    if (x%y==0){
+                        str = "不是质数";
+                        break;
+                    }
+                    //更新计数器
+                    y++;
+                }
+            }
+            //是质数 就相加
+            if (str == "是质数")
+                sum += x;
+        }
+        //得出1到100质数和
+        System.out.println(sum);*/
     }
 }
