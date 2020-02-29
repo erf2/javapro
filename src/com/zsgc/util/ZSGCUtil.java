@@ -65,7 +65,12 @@ public class ZSGCUtil {
                 T t = clz.newInstance();
                 Field[] fields = clz.getDeclaredFields();
                 for (Field f : fields) {
-                    Object value = rs.getObject(f.getName());
+                    String column = f.getName();
+                    if (f.isAnnotationPresent(Column.class)){
+                        Column c = f.getAnnotation(Column.class);
+                        column = c.value();
+                    }
+                    Object value = rs.getObject(column);
                     f.setAccessible(true);
                     f.set(t, value);
                 }
@@ -81,6 +86,45 @@ public class ZSGCUtil {
             close(con, pstmt, rs);
         }
         return list;
+    }
+
+    public static <T> T queryOne(String sql,Class<T> clz,Object... params){
+        T t = null;
+        Connection con = getconnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            pstmt = con.prepareStatement(sql);
+            if (pstmt != null) {
+                for (int i = 0; i < params.length; i++) {
+                    pstmt.setObject(i + 1, params[i]);
+                }
+            }
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                t = clz.newInstance();
+                Field[] fields = clz.getDeclaredFields();
+                for (Field f : fields) {
+                    String column = f.getName();
+                    if (f.isAnnotationPresent(Column.class)){
+                        Column c = f.getAnnotation(Column.class);
+                        column = c.value();
+                    }
+                    Object value = rs.getObject(column);
+                    f.setAccessible(true);
+                    f.set(t, value);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } finally {
+            close(con, pstmt, rs);
+        }
+        return t;
     }
 
     static void close(Connection con, PreparedStatement pstmt) {

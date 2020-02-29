@@ -2,6 +2,7 @@ package com.zsgc.test;
 
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.zsgc.pojo.Student;
+import com.zsgc.pojo.User;
 import com.zsgc.util.ZSGCUtil;
 import com.zsgc.web.StudentWeb;
 
@@ -17,8 +18,9 @@ public class ZSGCTest {
         /*StudentWeb studentWeb = new StudentWeb();
         studentWeb.showmain();
         studentWeb.input();*/
-        List<Student> list = ZSGCUtil.execoteQuery("select id,name,age,gender from student",Student.class);
-        System.out.println(list);
-
+        /*List<Student> list = ZSGCUtil.execoteQuery("select id,name,age,gender from student",Student.class);
+        System.out.println(list);*/
+        User user = ZSGCUtil.queryOne("select id,login_id,login_name,password from user where login_id = ?",User.class,"002");
+        System.out.println(user);
     }
 }
