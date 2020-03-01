@@ -4,19 +4,19 @@ package com.neusoft.daytwenty_nine;
  * Created by lan_jia_nao on 2020/2/29.
  */
 public class Ayys {
-    private Integer[] array;
+    private Object[] array;
     private Integer size;
     public Ayys(int number){
-        array = new Integer[number];
+        array = new Object[number];
         size = 0;
     }
     public Ayys(){
-        array = new Integer[10];
+        array = new Object[10];
         size = 0;
     }
-    public void add(int a){
+    public void add(Object a){
         if (size>=array.length){
-            Integer[] newArray = new Integer[size+size/2];
+            Object[] newArray = new Object[size+(size>>2)];
             for (int i=0;i<array.length;i++){
                 newArray[i]=array[i];
             }
@@ -27,7 +27,7 @@ public class Ayys {
     public int length(){
         return size;
     }
-    public int getIndex(int b){
+    public Object getIndex(int b){
         if (b<0||b>=size){
             System.out.println("索引错误");
             return -1;
